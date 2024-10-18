@@ -1,0 +1,110 @@
+/* GENERAL _______________________________________________ */
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.default-button {
+    font-size: 16px;
+    border-radius: 33px;
+    padding: 4px 10px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    position: relative;
+    overflow: hidden;
+    transition: padding 0.3s ease, gap 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Only define transitions here */
+}
+
+.default-button:hover {
+    background-color: transparent;
+    color: white;
+    padding-right: 35px;
+    gap: 7px; /* Increases gap on hover */
+}
+
+.default-button > img {
+    position: absolute; /* Stay with absolute for consistency */
+    width: 15px;
+    right: -15px; /* Start outside the button */
+    transition: right 0.3s ease, filter 0.3s ease; /* Smooth transition for right and filter */
+}
+
+.default-button:hover > img {
+    right: 10px; /* Move the image inside the button on hover */
+    /* filter: brightness(1); */
+}
+
+.button-style-dark {
+    border: 2px solid #232323;
+    color: white;
+    background-color: #232323;
+}
+
+.button-style-dark:hover {
+    color:#232323;
+
+}
+
+.button-style-dark > img {
+    filter: brightness(0);
+}
+
+
+.fa-arrow-right {
+    height: 17px;
+    margin-top: 2px;
+}
+
+
+/* NAVBAR _______________________________________________ */
+
+
+.bgBlur {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 100%); */
+    backdrop-filter: blur(10px);
+}
+
+/*
+.navbar-nav {
+    color: white;
+    background-blend-mode: difference;
+} */
+
+.navbar-nav .nav-link {
+    color: black; /* Default color */
+    mix-blend-mode: difference; /* Or use 'exclusion' */
+  }
+
+
+/* FOOTER _______________________________________________ */
+
+
+footer {
+    background-color: #232323;
+    height: 200px;
+    width: 100%;
+    padding: 40px 40px;
+
+}
+
+.have-questions {
+    align-items:center;
+    color: white;
+    gap: 15px;
+}
+
+footer > h2 {
+
+}

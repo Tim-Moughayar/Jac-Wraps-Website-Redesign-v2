@@ -1,0 +1,160 @@
+
+
+/* HERO SECTION ______________________________________________________ */
+
+
+#heroSection {
+    padding: 20px 40px 40px;
+}
+
+#heroTextAndNav {
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+
+#heroText {
+    min-width: 500px;
+    min-height: 95px;
+}
+
+h1 {
+    min-height: 95px;
+}
+
+.dynamicHeroText {
+    background-color: #232323;
+    color: white;
+    width: fit-content;
+    height: 50px;
+    padding: 1px 11px 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+#dynamicHeroTextContainer {
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    width: fit-content;
+    overflow: hidden;
+    display: inline-flex;
+}
+
+#dynamicHeroTextContainer:hover {
+    flex-direction: column-reverse;
+    justify-content:flex-end;
+}
+
+/* Vehicle Wraps Hero section ______________________________________________________*/
+
+#heroVan {
+    width: 1100px;
+}
+
+#heroImages {
+    /* margin-right: 35px; */
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+/* Vehicle Wraps Hero section ______________________________________________________*/
+
+.slideNav {
+    align-items: center;
+    gap: 15px;
+}
+
+.navArrow {
+    display: flex;
+}
+
+.navArrow > img {
+    filter: brightness(.6);
+    height: 18px;
+}
+
+.navArrow:hover > img {
+    filter: brightness(.4);
+}
+
+.dotIndicator {
+    display: flex;
+    height: 17px;
+    width: 17px;
+    background-color: #9e9e9e;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.dotIndicator:hover {
+    background-color: #555555;
+}
+
+.dotIndicator:active {
+    background-color: #252525;
+}
+
+
+/* SERVICES SECTION ______________________________________________________*/
+
+
+#servicesSection {
+    background-color: #232323;
+    width: 100%;
+    padding: 60px 40px 80px;
+    gap: 40px;
+}
+
+.serviceCarousels {
+    gap: 40px;
+}
+
+.serviceContainer {
+    gap: 10px;
+}
+
+.serviceTitle {
+    align-items: center;
+    gap: 13px;
+}
+
+.serviceTitle > h3 {
+    font-weight: 400;
+}
+
+.carousel {
+    height: 230px;
+    width: 100%;
+    background-color: #666666;
+    border-radius: 25px;
+    color: #666666;
+}
+
+
+
+
+
+/* ABOUT SECTION ______________________________________________________*/
+
+
+#aboutSection {
+    background-color: #ffffff;
+    height: 700px;
+    width: 100%;
+    padding: 159px 7% 266px;
+    gap: 30px;
+}
+
+#aboutSection > h2 {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+#aboutSection > p {
+    font-size: 22px;
+    max-width: 1030px;
+}

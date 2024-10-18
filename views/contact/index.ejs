@@ -1,0 +1,92 @@
+<% layout('layouts/boilerplate') -%>
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+</head>
+
+<body>
+    <div class="p-4">
+        <section class="contact-header mb-5">
+            <nav aria-label="contact-breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+            <div class="contact_title">
+                <h1>Contact us</h1>
+            </div>
+        </section>
+        <section class="flex-row gap-4">
+            <div class="binto-container flex-column flex-1">
+                <h2>Phone</h2>
+                <a class="fs-3 white-link" href="tel:555-555-5555">555-555-5555</a>
+                <a href="tel:555-555-5555">
+                    <button class="default-button" >Call us
+                        <img src="media/phone.png" alt="Next Slide">
+                    </button>
+                </a>
+            </div>
+            <div class="binto-container flex-column flex-1">
+                <h2>Hours</h2>
+                <table class="fs-4 justify-content-between">
+                    <tr><th>Weekdays:</th><td>9am - 5pm</td></tr>
+                    <tr><th>Saturday:</th><td>9am – 3pm</td></tr>
+                    <tr><th>Sunday:</th><td>Closed</td></tr>
+                </table>
+                <!-- <div>
+                    <div>
+                        Week days 8:00 am – 6:00 pm <br>
+                        Saturday 8:00 am – 3:00 pm <br>
+                    </div>
+                    <div></div>
+                </div>
+                <ul class="fs-3">
+                    <li>Week days 8:00 am – 6:00 pm</li>
+                    <li>Saturday 8:00 am – 3:00 pm</li>
+                    <li>Sunday off</li>
+                </ul> -->
+            </div>
+            <div class="binto-container flex-row gap-5 justify-content-between">
+                <div class="flex-column gap-3">
+                    <h2>Address</h2>
+                    <a class="fs-4 white-link" target="_blank" href=" https://maps.app.goo.gl/uYnqvvRo9xu3DdzCA">7034 N Milwaukee Ave. <br> Niles, IL 60714</a>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.564907064551!2d-87.80273302390866!3d42.00961237122764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc97ddaa64117%3A0xc9b4b4c2aa7a2c5!2sJac%20Wraps!5e0!3m2!1sen!2sus!4v1701316901643!5m2!1sen!2sus"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section class="request-form binto-container flex-column gap-4">
+            <h2 class="fs-2">Contact Form</h2>
+            <form action="https://api.web3forms.com/submit" method="POST" class="flex-column gap-4">
+                <input type="hidden" name="access_key" value="8a70c568-d887-4d94-b0c2-0693617cf203">
+                <input type="hidden" name="redirect" value="contact">
+
+                <div class="flex-row gap-5">
+                    <div class="flex-column flex-fill">
+                        <label for="fname">First Name: *</label>
+                        <input id="fname" class="text-field" type="text" name="firstname" required autocomplete="name">
+
+                        <label for="email">E-mail: *</label>
+                        <input id="email" class="text-field" type="email" name="email" required autocomplete="email">
+
+                        <label for="comments">Comments:</label>
+                        <textarea id="comments" name="Comments"></textarea>
+                    </div>
+                    <div class="flex-column flex-fill">
+                        <label for="lname">Last Name: *</label>
+                        <input id="lname" class="text-field" type="text" required name="lastname">
+
+                        <label for="phone">Phone:</label>
+                        <input id="phone" class="text-field" type="tel" name="phone" autocomplete="phone">
+                    </div>
+                </div>
+
+                <button class="default-button" type="submit">Submit Form
+                    <img src="media/arrow_right.svg" alt="Next Slide">
+
+                </button>
+            </form>
+        </section>
+    </div>
+</body>
