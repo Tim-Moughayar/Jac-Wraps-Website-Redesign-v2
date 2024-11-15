@@ -3,7 +3,7 @@
 
 I made the initial design back in November 2023 for my Web UX Fundementals and Prototyping class. 
 That same semester, I used the design to create a website for my Web Development class.
-I redid my design and website after taking a Web development Bootcamp in July 2024. This current design and website is still under development. 
+I redid my design and website after completing a Web development Bootcamp in August 2024. This current design and website is still under development. 
 
 <br>
 
