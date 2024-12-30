@@ -13,8 +13,16 @@ app.get('/', (req, res) => {
     res.render('home', {title: 'Home'})
 })
 
+app.get('/services', (req, res) => {
+    res.render('services/index', {title: 'Services'});
+})
+
 app.get('/contact', (req, res) => {
     res.render('contact/index', {title: 'Contact'});
+})
+
+app.get('/about', (req, res) => {
+    res.render('about/index', {title: 'About'});
 })
 
 // app.all('*', (req, res, next) => {
