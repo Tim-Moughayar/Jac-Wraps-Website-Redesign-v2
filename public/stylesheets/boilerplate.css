@@ -23,26 +23,25 @@
     gap: 0px;
     position: relative;
     overflow: hidden;
-    transition: padding 0.3s ease, gap 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Only define transitions here */
+    transition: padding 0.3s ease, gap 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .default-button:hover {
     background-color: transparent;
     color: white;
     padding-right: 35px;
-    gap: 7px; /* Increases gap on hover */
+    gap: 7px;
 }
 
 .default-button > img {
-    position: absolute; /* Stay with absolute for consistency */
+    position: absolute;
     width: 15px;
-    right: -15px; /* Start outside the button */
-    transition: right 0.3s ease, filter 0.3s ease; /* Smooth transition for right and filter */
+    right: -15px; /* Img starts outside button */
+    transition: right 0.3s ease, filter 0.3s ease;
 }
 
 .default-button:hover > img {
-    right: 10px; /* Move the image inside the button on hover */
-    /* filter: brightness(1); */
+    right: 10px; /* Move img inside button on hover */
 }
 
 .button-style-dark {
@@ -83,8 +82,8 @@
 } */
 
 .navbar-nav .nav-link {
-    color: black; /* Default color */
-    mix-blend-mode: difference; /* Or use 'exclusion' */
+    color: black;
+    mix-blend-mode: difference;
   }
 
 
@@ -108,3 +107,9 @@ footer {
 footer > h2 {
 
 }
+
+
+/* BINTO BOXES _______________________________________________ */
+
+
+
