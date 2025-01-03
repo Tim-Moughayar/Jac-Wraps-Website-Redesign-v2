@@ -1,0 +1,19 @@
+a:link, a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #485158;
+}
+
+.white-link:link, .white-link:visited {
+    color: white
+}
+
+.white-link:hover {
+    color: #b9b9b9
+}
+
+.breadcrumb-item {
+    color:white;
+}

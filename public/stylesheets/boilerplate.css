@@ -91,17 +91,22 @@
 
 
 footer {
-    background-color: #232323;
-    height: 200px;
+    background-color: #363636;
+    height: 150px;
     width: 100%;
     padding: 40px 40px;
-
 }
 
 .have-questions {
+    background-color: #1D1D1D;
+    height: 100px;
+    width: 100%;
+    padding: 40px 40px;
     align-items:center;
     color: white;
-    gap: 15px;
+    gap: 25px;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 footer > h2 {
@@ -109,7 +114,36 @@ footer > h2 {
 }
 
 
+/* QUESTIONS BOXES _______________________________________________ */
+
+
+
+
 /* BINTO BOXES _______________________________________________ */
 
+.binto-container {
+    gap: 12px;
+    padding: 30px 35px;
+    background-color: #1D1D1D;
+    color: white;
+    min-height: 250px;
+    border-radius: 25px;
+}
 
+a:link, a:visited {
+    
+    color: #ffffff;
+}
+
+a:hover {
+    color: #485158;
+}
+
+.white-link:link, .white-link:visited {
+    color: white
+}
+
+.white-link:hover {
+    color: #b9b9b9
+}
 
