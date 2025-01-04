@@ -1,4 +1,4 @@
-a:link, a:visited {
+/* a:link, a:visited {
     color: #ffffff;
 }
 
@@ -6,7 +6,7 @@ a:hover {
     color: #485158;
 }
 
-.white-link:link, .white-link:visited {
+.white-link:link:visited {
     color: white
 }
 
@@ -14,6 +14,49 @@ a:hover {
     color: #b9b9b9
 }
 
-.breadcrumb-item {
-    color:white;
+.breadcrumb-nav {
+    list-style: none;
 }
+
+.breadcrumb-item .active .breadcrumb-item::before{
+    color:white;
+} */
+
+
+.contact-header {
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0px;
+}
+
+/* Style the list */
+ul.breadcrumb-nav {
+
+    list-style: none;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb-nav li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb-nav li+li:before {
+    padding: 8px;
+    color: rgb(255, 255, 255);
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb-nav li a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb-nav li a:hover {
+    color: #6fb6f5;
+  }
