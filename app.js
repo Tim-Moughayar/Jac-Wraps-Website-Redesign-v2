@@ -25,6 +25,16 @@ app.get('/about', (req, res) => {
     res.render('about/index', {title: 'About'});
 })
 
+app.get('/vehicle-wraps', (req, res) => {
+    res.render('about/index', {title: 'About'});
+})
+
+app.get('/vehicle-wraps', (req, res) => { //ROUTING?? services/vehicle-wraps
+    res.render('about/index', {title: 'About'});
+})
+
+
+
 // app.all('*', (req, res, next) => {
 //     next(new ExpressError('Page Not Found', 404))
 // })

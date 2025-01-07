@@ -1,28 +1,3 @@
-/* a:link, a:visited {
-    color: #ffffff;
-}
-
-a:hover {
-    color: #485158;
-}
-
-.white-link:link:visited {
-    color: white
-}
-
-.white-link:hover {
-    color: #b9b9b9
-}
-
-.breadcrumb-nav {
-    list-style: none;
-}
-
-.breadcrumb-item .active .breadcrumb-item::before{
-    color:white;
-} */
-
-
 .contact-header {
     justify-content: space-between;
 }
@@ -33,7 +8,8 @@ h1 {
 
 /* Style the list */
 ul.breadcrumb-nav {
-
+    padding: 0;
+    margin: 0;
     list-style: none;
   }
   
@@ -45,7 +21,7 @@ ul.breadcrumb-nav {
   
   /* Add a slash symbol (/) before/behind each list item */
   ul.breadcrumb-nav li+li:before {
-    padding: 8px;
+    padding: 0px 8px;
     color: rgb(255, 255, 255);
     content: "/\00a0";
   }

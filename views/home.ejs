@@ -32,9 +32,10 @@
                         <img src="media/arrow_right.svg" alt="Next Slide">
                     </div>
                 </div>
-                <button class="default-button button-style-dark" >Explore Services
+                <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "", color: "button-style-dark"})%>
+                <!-- <button class="default-button button-style-dark" >Explore Services
                     <img src="media/arrow_right.svg" alt="Next Slide">
-                </button>
+                </button> -->
             </div>
 
         </div>
@@ -49,7 +50,8 @@
                 <div class="serviceTitle flex-row">
                     <h3>Vehicle Wraps<h3>
                     <span>|</span>
-                    <a href="#">
+                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "vehicle-wraps", color: ""})%>
+                    <a href="vehicle-wraps">
                         <button class="default-button" >View All
                             <img src="media/arrow_right.svg" alt="Next Slide">
                         </button>
