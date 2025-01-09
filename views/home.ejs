@@ -32,10 +32,7 @@
                         <img src="media/arrow_right.svg" alt="Next Slide">
                     </div>
                 </div>
-                <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "", color: "button-style-dark"})%>
-                <!-- <button class="default-button button-style-dark" >Explore Services
-                    <img src="media/arrow_right.svg" alt="Next Slide">
-                </button> -->
+                <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "services", color: "button-style-dark"})%>
             </div>
 
         </div>
@@ -50,12 +47,7 @@
                 <div class="serviceTitle flex-row">
                     <h3>Vehicle Wraps<h3>
                     <span>|</span>
-                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "vehicle-wraps", color: ""})%>
-                    <a href="vehicle-wraps">
-                        <button class="default-button" >View All
-                            <img src="media/arrow_right.svg" alt="Next Slide">
-                        </button>
-                    </a>
+                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
                 </div>
                 <div class="carousel">
                     .
@@ -63,13 +55,9 @@
             </div>
             <div class="serviceContainer flex-column">
                 <div class="serviceTitle flex-row">
-                    <h3>Commercial Graphics<h3>
+                    <h3>Architectural Graphics<h3>
                     <span>|</span>
-                    <a href="#">
-                        <button class="default-button" >View All
-                            <img src="media/arrow_right.svg" alt="Next Slide">
-                        </button>
-                    </a>
+                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
                 </div>
                 <div class="carousel">
                     .

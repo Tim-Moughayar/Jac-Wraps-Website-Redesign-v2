@@ -1,5 +1,15 @@
 /* GENERAL _______________________________________________ */
 
+main {
+    position: relative;
+    z-index: 1;
+    background: white;
+    /* box-shadow: 0 2rem 4rem #ffffff;; */
+}
+
+
+/* FLEX _______________________________________________ */
+
 
 .flex-column {
     display: flex;
@@ -10,6 +20,8 @@
     display: flex;
     flex-direction: row;
 }
+
+
 
 /* BUTTON _______________________________________________ */
 
@@ -98,6 +110,9 @@ footer {
     height: 150px;
     width: 100%;
     padding: 40px 40px;
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
 }
 
 .have-questions {
@@ -157,4 +172,12 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 100px 0px;
+}
+
+/* QUESTIONS _______________________________________________ */
+
+.have-questions {
+    align-items:center;
+    color: white;
+    gap: 15px;
 }

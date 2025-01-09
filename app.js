@@ -25,12 +25,12 @@ app.get('/about', (req, res) => {
     res.render('about/index', {title: 'About'});
 })
 
-app.get('/vehicle-wraps', (req, res) => {
-    res.render('about/index', {title: 'About'});
+app.get('/services/vehicle-wraps', (req, res) => {
+    res.render('services/vehicle-wraps/index', {title: 'Vehicle Wraps'});
 })
 
-app.get('/vehicle-wraps', (req, res) => { //ROUTING?? services/vehicle-wraps
-    res.render('about/index', {title: 'About'});
+app.get('/services/architectural-graphics', (req, res) => {
+    res.render('services/architectural-graphics/index', {title: 'Architectural Graphics'});
 })
 
 
