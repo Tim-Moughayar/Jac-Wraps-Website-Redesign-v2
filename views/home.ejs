@@ -6,7 +6,7 @@
 
 <body>
     <section id="heroSection" class="flex-row">
-        <div id="heroTextAndNav" class="flex-column">
+        <div id="hero_text_and_nav" class="flex-column">
             <div id="heroText">
                 <h1 class="text-dark fs-1">Elevate Your Brand <br> with
                     <div id="dynamicHeroTextContainer">
@@ -19,26 +19,34 @@
                     </div>
                 </h1>
             </div>
-            <div class="flex-row gap-3 ">
-                <div class="slideNav flex-row">
-                    <div class="navArrow">
+            <div class="hero_nav">
+                <div class="slide_nav flex-row">
+                    <button class="nav_arrow">
                         <img src="media/arrow_left.svg" alt="Previous Slide">
-                    </div>
+                    </button>
                     <div class="flex-row gap-2">
-                        <div class="dotIndicator"></div>
-                        <div class="dotIndicator"></div>
+                        <button class="carousel_indicator"></button>
+                        <button class="carousel_indicator"></button>
                     </div>
-                    <div class="navArrow">
+                    <button class="nav_arrow">
                         <img src="media/arrow_right.svg" alt="Next Slide">
-                    </div>
-                </div>
+                    </button>
+                </div> 
                 <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "services", color: "button-style-dark"})%>
             </div>
-
         </div>
-        <div id="heroImages">
-            <img id="heroVan" src="https://github.com/Tim-Moughayar/Jac-Wraps-Website/blob/main/web_pages/media/hero_van.png?raw=true" alt="A wrapped company van">
+         
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide">
+                    <img class="hero-image" src="media/hero_van.png" alt="">
+                </li>
+                <li class="carousel-slide">
+                    <img class="hero-image" src="media/hero_images_commercial_wrap_1.png" alt="">
+                </li>
+            </ul>
         </div>
+        
     </section>
     <section id="servicesSection" class="text-light flex-column">
         <h2 class="fs-1">Services</h2>
@@ -78,5 +86,7 @@
 
     </section>
     <%- include('./partials/questions')%>
+
+    <script src="javascripts/hero-carousel.js"></script>
     <script src="https://kit.fontawesome.com/6a1ee5dede.js" crossorigin="anonymous"></script>
 </body>
