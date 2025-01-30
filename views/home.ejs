@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <section id="heroSection" class="flex-row">
+    <section id="heroSection" class="">
         <div id="hero_text_and_nav" class="flex-column">
             <div id="heroText">
                 <h1 class="text-dark fs-1">Elevate Your Brand <br> with
@@ -21,27 +21,26 @@
             </div>
             <div class="hero_nav">
                 <div class="slide_nav flex-row">
-                    <button class="nav_arrow">
+                    <button class="hero__arrow hero__arrow--left">
                         <img src="media/arrow_left.svg" alt="Previous Slide">
                     </button>
                     <div class="flex-row gap-2">
-                        <button class="carousel_indicator"></button>
-                        <button class="carousel_indicator"></button>
+                        <button class="hero__dot-indicator"></button>
+                        <button class="hero__dot-indicator"></button>
                     </div>
-                    <button class="nav_arrow">
+                    <button class="hero__arrow hero__arrow--right">
                         <img src="media/arrow_right.svg" alt="Next Slide">
                     </button>
                 </div> 
                 <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "services", color: "button-style-dark"})%>
             </div>
         </div>
-         
-        <div class="carousel-track-container">
-            <ul class="carousel-track">
-                <li class="carousel-slide">
-                    <img class="hero-image" src="media/hero_van.png" alt="">
+        <div class="hero-track-container">
+            <ul class="hero-track">
+                <li class="hero-slide current-slide">
+                    <img class="hero-image hero-van" src="media/hero_van.png" alt="">
                 </li>
-                <li class="carousel-slide">
+                <li class="hero-slide">
                     <img class="hero-image" src="media/hero_images_commercial_wrap_1.png" alt="">
                 </li>
             </ul>

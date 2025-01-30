@@ -3,10 +3,11 @@
 
 #heroSection {
     height: 600px;
-    padding: 20px 40px 40px;
+    padding: 20px 0px 40px 40px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    position: relative;
+    /* justify-content: space-between; */
 }
 
 #hero_text_and_nav {
@@ -52,34 +53,48 @@ h1 {
 
 /* Hero Img Carousel ______________________________________________________*/
 
-.carousel-track-container {
+.hero-track-container {
+    /* background-color: aqua; */
+    display: flex;
+    height: 100%;
+    width: 100%;
     position: relative;
-    height: 500px;
-    width: 1100px;
-    background-color: aqua;
-    justify-content: end;
+    overflow: hidden;
+    padding: 0;
 }
 
-.carousel-track {
+.hero-track {
     padding: 0;
     margin: 0;
     list-style: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+    transition: transform 500ms ease-out;
 }
 
-.carousel-slide {
+.hero-slide {
     position: absolute;
-    right: 0px;
-
+    top: 0px;
+    bottom: 0px;
+    /* width: 100%; */
+    /* right: 0px; */
+    /* height: 100%; */
+    width: fit-content;
 }
 
-#heroVan {
+/* .hero-van {
     width: 1100px;
-}
+} */
 
-#hero-image {
+.hero-image {
     /* margin-right: 35px; */
-    justify-content: flex-end;
-    margin-left: auto;
+    /* justify-content: flex-end; */
+    /* margin-left: auto; */
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Hero Img Carousel Nav ______________________________________________________*/
@@ -96,22 +111,22 @@ h1 {
     gap: 15px;
 }
 
-.nav_arrow {
+.hero__arrow {
     display: flex;
     border: none;
     background-color: transparent;
 }
 
-.nav_arrow > img {
+.hero__arrow > img {
     filter: brightness(.6);
     height: 18px;
 }
 
-.nav_arrow:hover > img {
+.hero__arrow:hover > img {
     filter: brightness(.4);
 }
 
-.carousel_indicator {
+.hero__dot-indicator {
     display: flex;
     height: 16px;
     width: 16px;
@@ -122,11 +137,11 @@ h1 {
     padding: 5px;
 }
 
-.carousel_indicator:hover {
+.hero__dot-indicator:hover {
     background-color: #555555;
 }
 
-.carousel_indicator:active {
+.hero__dot-indicator:active {
     background-color: #252525;
 }
 
