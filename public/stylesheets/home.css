@@ -1,7 +1,7 @@
 /* HERO SECTION ______________________________________________________ */
 
 
-#heroSection {
+.hero__section {
     height: 600px;
     padding: 20px 0px 40px 40px;
     display: flex;
@@ -10,14 +10,14 @@
     /* justify-content: space-between; */
 }
 
-#hero_text_and_nav {
+.hero__title-and-nav {
     justify-content: space-between;
     padding-top: 40px;
     padding-left: 10px;
     padding-bottom: 50px;
 }
 
-#heroText {
+.hero__title {
     min-width: 500px;
     min-height: 95px;
 }
@@ -26,7 +26,7 @@ h1 {
     min-height: 95px;
 }
 
-.dynamicHeroText {
+.hero__dynamic-text {
     background-color: #232323;
     color: white;
     width: fit-content;
@@ -37,7 +37,7 @@ h1 {
 
 }
 
-#dynamicHeroTextContainer {
+.hero__dynamic-text-container {
     display: flex;
     flex-direction: column;
     height: 55px;
@@ -46,24 +46,26 @@ h1 {
     display: inline-flex;
 }
 
-#dynamicHeroTextContainer:hover {
+.hero__dynamic-text-container:hover {
     flex-direction: column-reverse;
     justify-content:flex-end;
 }
 
 /* Hero Img Carousel ______________________________________________________*/
 
-.hero-track-container {
+.hero__track-container {
     /* background-color: aqua; */
     display: flex;
     height: 100%;
     width: 100%;
+    right: 0;
     position: relative;
     overflow: hidden;
     padding: 0;
+    /* justify-content: end; */
 }
 
-.hero-track {
+.hero__track {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -74,7 +76,7 @@ h1 {
     transition: transform 500ms ease-out;
 }
 
-.hero-slide {
+.hero__slide {
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -84,11 +86,7 @@ h1 {
     width: fit-content;
 }
 
-/* .hero-van {
-    width: 1100px;
-} */
-
-.hero-image {
+.hero__image {
     /* margin-right: 35px; */
     /* justify-content: flex-end; */
     /* margin-left: auto; */
@@ -99,14 +97,14 @@ h1 {
 
 /* Hero Img Carousel Nav ______________________________________________________*/
 
-.hero_nav {
+.hero__nav-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
 }
 
-.slide_nav {
+.hero__slide-nav {
     align-items: center;
     gap: 15px;
 }
@@ -141,7 +139,7 @@ h1 {
     background-color: #555555;
 }
 
-.hero__dot-indicator:active {
+.hero__dot-indicator.current-slide {
     background-color: #252525;
 }
 
@@ -149,31 +147,31 @@ h1 {
 /* SERVICES SECTION ______________________________________________________*/
 
 
-#servicesSection {
+.services__section {
     background-color: #232323;
     width: 100%;
     padding: 60px 40px 80px;
     gap: 40px;
 }
 
-.serviceCarousels {
+.services__carousel-container {
     gap: 40px;
 }
 
-.serviceContainer {
+.services__title-and-button-container {
     gap: 10px;
 }
 
-.serviceTitle {
+.services__title-container {
     align-items: center;
     gap: 13px;
 }
 
-.serviceTitle > h3 {
+.services__title {
     font-weight: 400;
 }
 
-.carousel {
+.services__carousel {
     height: 230px;
     width: 100%;
     background-color: #666666;
@@ -186,7 +184,7 @@ h1 {
 /* ABOUT SECTION ______________________________________________________*/
 
 
-#aboutSection {
+.about__section {
     background-color: #ffffff;
     height: 700px;
     width: 100%;
@@ -194,12 +192,12 @@ h1 {
     gap: 30px;
 }
 
-#aboutSection > h2 {
+.about__main-text {
     font-weight: 700;
     font-size: 48px;
 }
 
-#aboutSection > p {
+.about__sub-text {
     font-size: 22px;
     max-width: 1030px;
 }

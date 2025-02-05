@@ -5,27 +5,27 @@
 </head>
 
 <body>
-    <section id="heroSection" class="">
-        <div id="hero_text_and_nav" class="flex-column">
-            <div id="heroText">
+    <section class="hero__section">
+        <div class="hero__title-and-nav flex--column">
+            <div class="hero__title">
                 <h1 class="text-dark fs-1">Elevate Your Brand <br> with
-                    <div id="dynamicHeroTextContainer">
-                        <div class="dynamicHeroText">
+                    <div class="hero__dynamic-text-container">
+                        <div class="hero__dynamic-text">
                             Vehicle Wraps
                         </div>
-                        <div class="dynamicHeroText">
+                        <div class="hero__dynamic-text">
                             Commercial Graphics
                         </div>
                     </div>
                 </h1>
             </div>
-            <div class="hero_nav">
-                <div class="slide_nav flex-row">
+            <div class="hero__nav-container">
+                <div class="hero__slide-nav flex--row">
                     <button class="hero__arrow hero__arrow--left">
                         <img src="media/arrow_left.svg" alt="Previous Slide">
                     </button>
-                    <div class="flex-row gap-2">
-                        <button class="hero__dot-indicator"></button>
+                    <div class="hero__dot-indicator-container flex--row gap-2">
+                        <button class="hero__dot-indicator current-slide"></button>
                         <button class="hero__dot-indicator"></button>
                     </div>
                     <button class="hero__arrow hero__arrow--right">
@@ -35,49 +35,49 @@
                 <%- include('./partials/button', {text: "Explore Services", img: "arrow_right.svg", link: "services", color: "button-style-dark"})%>
             </div>
         </div>
-        <div class="hero-track-container">
-            <ul class="hero-track">
-                <li class="hero-slide current-slide">
-                    <img class="hero-image hero-van" src="media/hero_van.png" alt="">
+        <div class="hero__track-container">
+            <ul class="hero__track">
+                <li class="hero__slide current-slide">
+                    <img class="hero__image" src="media/hero_van.png" alt="">
                 </li>
-                <li class="hero-slide">
-                    <img class="hero-image" src="media/hero_images_commercial_wrap_1.png" alt="">
+                <li class="hero__slide">
+                    <img class="hero__image" src="media/hero_images_commercial_wrap_1.png" alt="">
                 </li>
             </ul>
         </div>
         
     </section>
-    <section id="servicesSection" class="text-light flex-column">
+    <section class="services__section text-light flex--column">
         <h2 class="fs-1">Services</h2>
-        <div class="serviceCarousels flex-column">
-            <div class="serviceContainer flex-column">
-                <div class="serviceTitle flex-row">
-                    <h3>Vehicle Wraps<h3>
+        <div class="services__carousel-container flex--column">
+            <div class="services__title-and-button-container flex--column">
+                <div class="services__title-container flex--row">
+                    <h3 class="services__title">Vehicle Wraps<h3>
                     <span>|</span>
                     <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
                 </div>
-                <div class="carousel">
+                <div class="services__carousel">
                     .
                 </div>
             </div>
-            <div class="serviceContainer flex-column">
-                <div class="serviceTitle flex-row">
-                    <h3>Architectural Graphics<h3>
+            <div class="services__title-and-button-container flex--column">
+                <div class="services__title-container flex--row">
+                    <h3 class="services__title">Architectural Graphics<h3>
                     <span>|</span>
                     <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
                 </div>
-                <div class="carousel">
+                <div class="services__carousel">
                     .
                 </div>
             </div>
         </div>
     </section>
-    <section id="aboutSection" class="flex-column">
-        <h2 class="text-dark fs-1">
+    <section class="about__section flex--column">
+        <h2 class="about__main-text text-dark fs-1">
             Jac Wraps is a family owned business, <br>
             proudly serving nationwide clients and our local communities.
         </h2>
-        <p>
+        <p class="about__sub-text">
             Our goal is to help establishments like yours create brand recognition through various vinyl installations.
             We offer a wide range of products to suit your goals and budget.
             From business hour signs to a fleet of vehicles, the possibilities are endless!
