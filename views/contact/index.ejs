@@ -5,32 +5,34 @@
 </head>
 
 <body>
-    <div class="p-4">
+    <div class="contact__container">
         <%- include('../partials/header', {page_title: "Contact Us"} )%>
-        <section class="flex--row gap-4">
-            <div class="binto-container flex--column flex-1">
-                <h2>Phone</h2>
-                <a class="fs-3 white-link" href="tel:555-555-5555">555-555-5555</a>
-                <a href="tel:555-555-5555">
-                    <button class="default-button" >Call us
-                        <img src="media/phone.png" alt="Next Slide">
-                    </button>
-                </a>
+        <section class="contact__info-container">
+            <div class="contact__info-phone-and-hours">
+                <div class="contact__info--phone binto-container flex--column flex-1">
+                    <h2>Phone</h2>
+                    <a class="fs-3 white-link" href="tel:555-555-5555">555-555-5555</a>
+                    <a href="tel:555-555-5555">
+                        <button class="default-button" >Call us
+                            <img src="media/phone.png" alt="Next Slide">
+                        </button>
+                    </a>
+                </div>
+                <div class="contact__info--hours binto-container flex--column flex-1">
+                    <h2>Hours</h2>
+                    <table class="hours__table fs-4">
+                        <tr><th>Weekdays:</th><td>9am - 5pm</td></tr>
+                        <tr><th>Saturday:</th><td>9am – 3pm</td></tr>
+                        <tr><th>Sunday:</th><td>Closed</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="binto-container flex--column flex-1">
-                <h2>Hours</h2>
-                <table class="fs-4 justify-content-between">
-                    <tr><th>Weekdays:</th><td>9am - 5pm</td></tr>
-                    <tr><th>Saturday:</th><td>9am – 3pm</td></tr>
-                    <tr><th>Sunday:</th><td>Closed</td></tr>
-                </table>
-            </div>
-            <div class="binto-container flex--row gap-5 justify-content-between">
-                <div class="flex--column gap-3">
+            <div class="contact__info--address binto-container flex--row gap-5 justify-content-between">
+                <div class="address__text-container gap-3">
                     <h2>Address</h2>
                     <a class="fs-4 white-link" target="_blank" href=" https://maps.app.goo.gl/uYnqvvRo9xu3DdzCA">7034 N Milwaukee Ave. <br> Niles, IL 60714</a>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.564907064551!2d-87.80273302390866!3d42.00961237122764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc97ddaa64117%3A0xc9b4b4c2aa7a2c5!2sJac%20Wraps!5e0!3m2!1sen!2sus!4v1701316901643!5m2!1sen!2sus"
+                <iframe class="contact__address-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.564907064551!2d-87.80273302390866!3d42.00961237122764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc97ddaa64117%3A0xc9b4b4c2aa7a2c5!2sJac%20Wraps!5e0!3m2!1sen!2sus!4v1701316901643!5m2!1sen!2sus"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>

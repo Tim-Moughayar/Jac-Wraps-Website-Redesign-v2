@@ -1,4 +1,5 @@
 const track = document.querySelector('.hero__track');
+const textTrack = document.querySelector('.hero__dynamic-text-track');
 const trackContainer = document.querySelector('.hero__track-container');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.hero__arrow--right');
@@ -16,6 +17,15 @@ slides.forEach(setSlidePosition);
 
 const moveToSlide = (track, currentSlide, targetSlide) => { 
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    
+    if (targetSlide.style.left === "0px") {
+        console.log('above 0', targetSlide.style.left);
+        textTrack.style.transform = 'translateY(-' + '0px' + ')';
+    } else {
+        console.log('below 0', targetSlide.style.left);
+        textTrack.style.transform = 'translateY(-' + '50px' + ')';
+    }
+    
     console.log('targetSlide.style.left', targetSlide.style.left);
     console.log('slideWidth', slideWidth);
     currentSlide.classList.remove('current-slide');

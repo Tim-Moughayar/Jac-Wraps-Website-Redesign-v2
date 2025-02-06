@@ -1,10 +1,19 @@
+.services__container {
+    padding: 0px 24px;
+    height: 95vh;
+}
+
 .service-card {
     flex: 1;
     height: 500px;
     transition: 0.3s;
+    font-weight: 400;
+    font-size: 2em;
+    justify-content: end;
 }
 
 .service-card:hover {
     flex: 2;
+    color: rgb(255, 255, 255);
 }
 

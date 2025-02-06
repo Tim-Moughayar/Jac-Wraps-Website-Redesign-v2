@@ -4,8 +4,35 @@
 
   }
 
+.contact__container {
+    padding: 0px 24px
+}
+
+.contact__info-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    white-space: nowrap;
+}
+
+.contact__info-phone-and-hours {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 25px;
+}
+
 h2 {
     font-size: x-large;
+}
+
+.hours__table {
+    width: 100%;
+    border-spacing: 50px 0;
+}
+
+tr {
+    width: 100%;
 }
 
 th {
@@ -13,17 +40,11 @@ th {
 }
 
 td {
-    padding-left: 12%;
+    padding-left: 20px;
+    text-align: end;
+    /* width: 100%; */
+    white-space: nowrap;
 }
-
-/* .binto-container {
-    gap: 12px;
-    padding: 30px 35px;
-    background-color: #1D1D1D;
-    color: white;
-    min-height: 250px;
-    border-radius: 25px;
-} */
 
 a:link, a:visited {
     
@@ -42,11 +63,38 @@ a:hover {
     color: #b9b9b9
 }
 
-iframe {
+.contact__info--address {
+    width: 100%;
+}
+
+.address__text-container {
+    white-space: nowrap;
+}
+
+.contact__address-map {
+    display: block;
     width: 500px;
     height: 230px;
     border: 0;
     border-radius: 10px;
+}
+
+@media (max-width: 1545px) {
+    .contact__address-map {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .contact__info-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 620px) {
+    .contact__info-phone-and-hours {
+        flex-direction: column;
+    }
 }
 
 .request-form {

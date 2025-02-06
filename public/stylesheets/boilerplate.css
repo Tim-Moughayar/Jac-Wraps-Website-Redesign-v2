@@ -24,7 +24,6 @@ main {
 
 /* BUTTON _______________________________________________ */
 
-
 .default-button {
     font-size: 16px;
     border-radius: 33px;
@@ -34,6 +33,7 @@ main {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
     gap: 0px;
     position: relative;
     overflow: hidden;
@@ -82,58 +82,44 @@ main {
 
 /* NAVBAR _______________________________________________ */
 
-
 .bgBlur {
-    background-color: rgba(255, 255, 255, 0.3);
-    /* background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 100%); */
+    background-color: rgba(255, 255, 255, 0.685);
     backdrop-filter: blur(10px);
 }
 
-/*
-.navbar-nav {
-    color: white;
-    background-blend-mode: difference;
-} */
+.brand__container {
+    padding: 0px 40px 0px 35px;
+}
 
 .navbar-nav .nav-link {
     color: black;
     mix-blend-mode: difference;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    gap: 10px;
   }
 
 
 /* FOOTER _______________________________________________ */
 
-
-footer {
+.footer {
     background-color: #363636;
     height: 150px;
     width: 100%;
-    padding: 40px 40px;
+    padding: 0px 40px;
     position: sticky;
     bottom: 0;
     z-index: 0;
+    display: flex;
+    justify-content: end;
 }
 
-.have-questions {
-    background-color: #1D1D1D;
-    height: 100px;
-    width: 100%;
-    padding: 40px 40px;
-    align-items:center;
-    color: white;
-    gap: 25px;
-    font-size: 25px;
-    font-weight: 300;
+.footer__text {
+    color: rgb(19, 19, 19);
 }
-
-footer > h2 {
-
-}
-
-
-/* QUESTIONS BOXES _______________________________________________ */
-
-
 
 
 /* BINTO BOXES _______________________________________________ */
@@ -173,10 +159,17 @@ a:hover {
     padding: 100px 0px;
 }
 
+
 /* QUESTIONS _______________________________________________ */
 
 .have-questions {
+    background-color: #1D1D1D;
+    height: 100px;
+    width: 100%;
+    padding: 40px;
     align-items:center;
     color: white;
-    gap: 15px;
+    gap: 25px;
+    font-size: 25px;
+    font-weight: 300;
 }

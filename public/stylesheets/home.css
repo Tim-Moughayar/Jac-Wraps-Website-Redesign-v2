@@ -1,29 +1,47 @@
 /* HERO SECTION ______________________________________________________ */
 
-
 .hero__section {
     height: 600px;
     padding: 20px 0px 40px 40px;
     display: flex;
     flex-direction: row;
     position: relative;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+}
+
+@media (min-width: 1705px) {
+    .hero__section {
+        padding: 20px 30px 40px 40px;
+    }
 }
 
 .hero__title-and-nav {
     justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 10px;
-    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.hero__title-container {
+    min-height: 95px;
 }
 
 .hero__title {
-    min-width: 500px;
     min-height: 95px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-h1 {
-    min-height: 95px;
+.hero__dynamic-text-container {
+    flex-direction: column;
+    display: inline-flex;
+    height: 50px;
+    width: fit-content;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.hero__dynamic-text-track {
+    transition: transform 500ms ease-in-out;
 }
 
 .hero__dynamic-text {
@@ -31,69 +49,9 @@ h1 {
     color: white;
     width: fit-content;
     height: 50px;
-    padding: 1px 11px 4px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-
+    padding: 0px 11px;
 }
 
-.hero__dynamic-text-container {
-    display: flex;
-    flex-direction: column;
-    height: 55px;
-    width: fit-content;
-    overflow: hidden;
-    display: inline-flex;
-}
-
-.hero__dynamic-text-container:hover {
-    flex-direction: column-reverse;
-    justify-content:flex-end;
-}
-
-/* Hero Img Carousel ______________________________________________________*/
-
-.hero__track-container {
-    /* background-color: aqua; */
-    display: flex;
-    height: 100%;
-    width: 100%;
-    right: 0;
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-    /* justify-content: end; */
-}
-
-.hero__track {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    /* overflow: hidden; */
-    transition: transform 500ms ease-out;
-}
-
-.hero__slide {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    /* width: 100%; */
-    /* right: 0px; */
-    /* height: 100%; */
-    width: fit-content;
-}
-
-.hero__image {
-    /* margin-right: 35px; */
-    /* justify-content: flex-end; */
-    /* margin-left: auto; */
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-}
 
 /* Hero Img Carousel Nav ______________________________________________________*/
 
@@ -116,19 +74,19 @@ h1 {
 }
 
 .hero__arrow > img {
-    filter: brightness(.6);
+    filter: brightness(.5);
     height: 18px;
 }
 
 .hero__arrow:hover > img {
-    filter: brightness(.4);
+    filter: brightness(.2);
 }
 
 .hero__dot-indicator {
     display: flex;
     height: 16px;
     width: 16px;
-    background-color: #9e9e9e;
+    background-color: #868686;
     border: none;
     border-radius: 50%;
     display: inline-block;
@@ -144,8 +102,71 @@ h1 {
 }
 
 
-/* SERVICES SECTION ______________________________________________________*/
+/* Hero Img Carousel ______________________________________________________*/
 
+.hero__track-container {
+    /* background-color: aqua; */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 500ms ease-in-out;
+}
+
+.hero__slide {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero__image {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__image-divider {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 500px;
+    height: fit-content;
+}
+
+.hero__image--architectural-graphics-1 {
+    height: 510px;
+    width: 510px;
+    margin-left: 20px;
+}
+
+.hero__image--architectural-graphics-2 {
+    height: 320px;
+    width: 329px;
+    margin-left: 40px;
+}
+
+.hero__image--architectural-graphics-3 {
+    height: 220px;
+    width: 220px;
+    margin-left: auto;
+}
+
+
+/* SERVICES SECTION ______________________________________________________*/
 
 .services__section {
     background-color: #232323;
@@ -183,12 +204,11 @@ h1 {
 
 /* ABOUT SECTION ______________________________________________________*/
 
-
 .about__section {
     background-color: #ffffff;
     height: 700px;
     width: 100%;
-    padding: 159px 7% 266px;
+    padding: 160px 40px 160px;
     gap: 30px;
 }
 
