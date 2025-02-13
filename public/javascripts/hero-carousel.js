@@ -6,69 +6,143 @@ const nextButton = document.querySelector('.hero__arrow--right');
 const prevButton = document.querySelector('.hero__arrow--left');
 const dotsNav = document.querySelector('.hero__dot-indicator-container');
 const dots = Array.from(dotsNav.children);
+let userHasInteracted = false;
+let autoAdvanceTimer = null;
 
+// Initialize carousel
 const slideWidth = slides[0].getBoundingClientRect().width;
-trackContainer.style.maxWidth = slideWidth + 'px';
+trackContainer.style.maxWidth = `${slideWidth}px`;
 
+// Set up initial positions
 const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + 'px';
-}
+    slide.style.left = `${slideWidth * index}px`;
+};
 slides.forEach(setSlidePosition);
 
-const moveToSlide = (track, currentSlide, targetSlide) => { 
-    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+// Move to target slide
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    if (!targetSlide) return; // Guard against null targetSlide
     
-    if (targetSlide.style.left === "0px") {
-        console.log('above 0', targetSlide.style.left);
-        textTrack.style.transform = 'translateY(-' + '0px' + ')';
-    } else {
-        console.log('below 0', targetSlide.style.left);
-        textTrack.style.transform = 'translateY(-' + '50px' + ')';
-    }
+    track.style.transform = `translateX(-${targetSlide.style.left})`;
     
-    console.log('targetSlide.style.left', targetSlide.style.left);
-    console.log('slideWidth', slideWidth);
+    // Update text track position
+    const isFirstSlide = targetSlide.style.left === "0px";
+    textTrack.style.transform = `translateY(-${isFirstSlide ? '0' : '50'}px)`;
+    
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
-}
+};
 
+// Update dot indicators
 const updateDots = (currentDot, targetDot) => {
+    if (!targetDot) return; // Guard against null targetDot
+    
     currentDot.classList.remove('current-slide');
     targetDot.classList.add('current-slide');
-}
+};
 
-prevButton.addEventListener('click', e => {
-    const currentSlide = track.querySelector('.current-slide')
-    const preSlide = currentSlide.previousElementSibling;
-    const currentDot = dotsNav.querySelector('.current-slide');
-    const prevDot = currentDot.previousElementSibling;
-
-    moveToSlide(track, currentSlide, preSlide);
-    updateDots(currentDot, prevDot);
-})
-
-nextButton.addEventListener('click', e => {
+// Handle previous slide
+const prevSlide = () => {
     const currentSlide = track.querySelector('.current-slide');
-    const nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
-    const nextDot = currentDot.nextElementSibling;
+    
+    let targetSlide = currentSlide.previousElementSibling;
+    let targetDot = currentDot.previousElementSibling;
+    
+    // Loop to last slide if at beginning
+    if (!targetSlide) {
+        targetSlide = slides[slides.length - 1];
+        targetDot = dots[dots.length - 1];
+    }
+    
+    moveToSlide(track, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
+};
 
-    moveToSlide(track, currentSlide, nextSlide);
-    updateDots(currentDot, nextDot);
-}) 
+// Handle next slide
+const nextSlide = () => {
+    const currentSlide = track.querySelector('.current-slide');
+    const currentDot = dotsNav.querySelector('.current-slide');
+    
+    let targetSlide = currentSlide.nextElementSibling;
+    let targetDot = currentDot.nextElementSibling;
+    
+    // Loop to first slide if at end
+    if (!targetSlide) {
+        targetSlide = slides[0];
+        targetDot = dots[0];
+    }
+    
+    moveToSlide(track, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
+};
 
-// when I click nav indicator, move to that slide
+// Event listeners
+prevButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    userHasInteracted = true;
+    clearTimeout(autoAdvanceTimer);
+    prevSlide();
+});
 
-dotsNav.addEventListener('click', e => {
+nextButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    userHasInteracted = true;
+    clearTimeout(autoAdvanceTimer);
+    nextSlide();
+});
+
+dotsNav.addEventListener('click', (e) => {
     const targetDot = e.target.closest('.hero__dot-indicator');
-
     if (!targetDot) return;
-
+    
+    userHasInteracted = true;
+    clearTimeout(autoAdvanceTimer);
+    
     const currentSlide = track.querySelector('.current-slide');
     const currentDot = dotsNav.querySelector('.current-slide');
     const targetIndex = dots.findIndex(dot => dot === targetDot);
     const targetSlide = slides[targetIndex];
-
+    
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
 });
+
+// Auto advance functionality
+const autoAdvance = () => {
+    if (userHasInteracted) return;
+    nextSlide();
+    autoAdvanceTimer = setTimeout(autoAdvance, 8000);
+};
+
+// Start auto advance
+autoAdvanceTimer = setTimeout(autoAdvance, 8000);
+
+// Optional: Add touch/swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+const handleSwipe = () => {
+    const swipeThreshold = 50; // Minimum distance for a swipe
+    const difference = touchStartX - touchEndX;
+    
+    if (Math.abs(difference) < swipeThreshold) return;
+    
+    userHasInteracted = true;
+    clearTimeout(autoAdvanceTimer);
+    
+    if (difference > 0) {
+        nextSlide(); // Swipe left
+    } else {
+        prevSlide(); // Swipe right
+    }
+};

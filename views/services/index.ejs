@@ -6,14 +6,20 @@
 </head>
 
 <body>
-    <div class="services__container">
+    <div class="services__container flex--column">
         <%- include('../partials/header')%>
         <section class="flex--row gap-4">
-            <a href="services/vehicle-wraps" class="binto-container flex--column service-card">
-                Vehicle Wraps
+            <a href="services/vehicle-wraps" class="binto-container flex--column service__card">
+                <img class="service__card-image" src="../media/vehicle_wraps_man_smoothing_2.png" alt="vehicle wrap service">
+                <div class="service__card-title-background">
+                    <h2 class="service__card-title">Vehicle Wraps</h2>
+                </div>
             </a>
-            <a href="services/architectural-graphics" class="binto-container flex--column service-card">
-                Architectural Graphics
+            <a href="services/architectural-graphics" class="binto-container flex--column service__card">
+                <img class="service__card-image" src="../media/architectural_graphics_storefront_wrap.png" alt="Architectural Graphics service">
+                <div class="service__card-title-background">
+                    <h2 class="service__card-title">Architectural Graphics</h2>
+                </div>
             </a>
         </section>
     </div>

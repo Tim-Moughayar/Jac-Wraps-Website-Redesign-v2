@@ -91,6 +91,10 @@ main {
     padding: 0px 40px 0px 35px;
 }
 
+.navbar__jacwraps_logo {
+    width: 75px;
+}
+
 .navbar-nav .nav-link {
     color: black;
     mix-blend-mode: difference;
@@ -106,19 +110,133 @@ main {
 /* FOOTER _______________________________________________ */
 
 .footer {
-    background-color: #363636;
-    height: 150px;
+    background-color: #2c2c2c;
+    height: 160px;
     width: 100%;
-    padding: 0px 40px;
+    padding: 25px 40px;
     position: sticky;
     bottom: 0;
     z-index: 0;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.footer__nav {
+    width: 500px;
+    color: white;
+    justify-content: space-between;
+}
+
+.footer__nav-category {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.footer__nav-link, .footer__nav-link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer__nav-link:hover {
+    color:#8f8f8f;
+}
+
+.footer__nav-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-bottom: 7px;
+}
+
+.footer__nav-sub-pages-list {
+    font-size: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+.footer__nav-sub-page-item {
+    padding-bottom: 6px;
+}
+
+.footer__socials-and-logo-container {
+    height: 100%;
+    gap: 25px;
+    align-items: end;
+}
+
+.footer__social-links {
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px;
+}
+
+.footer__social-link-item {
+    background-color: #ffffff;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    border-radius: 50%;
+    border: #ffffff 2px solid;
+    transition: background-color 0.3s ease;
+}
+
+.footer__social-link-item:hover {
+    background-color: #ffffff00;
+}
+
+.footer__social-link-item:hover .footer__social-image {
+    display: none;
+}
+
+.footer__social-link-item:hover .footer__social-image--white {
+    display: block;
+}
+
+.footer__social-image {
+    height: 17px;
+}
+
+.footer__social-image--white {
+    height: 17px;
+    display: none;
+}
+
+.footer__logo {
+    /* margin-left: auto; */
+}
+
+.footer__logo-img {
+    width: 100px;
 }
 
 .footer__text {
-    color: rgb(19, 19, 19);
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        flex-direction: column;
+        height: 300px;
+        gap: auto;
+    }
+
+    .footer__nav {
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .footer__nav-category {
+        justify-content: center;
+    }
+    
+    .footer__socials-and-logo-container {
+        justify-content: end;
+        align-items: start;
+    }
 }
 
 
@@ -172,4 +290,5 @@ a:hover {
     gap: 25px;
     font-size: 25px;
     font-weight: 300;
+    /* border-bottom: rgb(59, 59, 59) 2px solid; */
 }
