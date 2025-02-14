@@ -1,49 +1,12 @@
+/* GENERAL =========================================== */
+
 :root {
     --blue: #67bbff;
     --dark-background: ;
-
   }
 
-.contact__container {
-    padding: 5px 24px 25px;
-}
-
-.contact__info-container {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    white-space: nowrap;
-}
-
-.contact__info-phone-and-hours {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 25px;
-}
-
 h2 {
-    font-size: x-large;
-}
-
-.hours__table {
-    width: 100%;
-    border-spacing: 50px 0;
-}
-
-tr {
-    width: 100%;
-}
-
-th {
-    font-weight: normal;
-}
-
-td {
-    padding-left: 20px;
-    text-align: end;
-    /* width: 100%; */
-    white-space: nowrap;
+    font-size: 25px;
 }
 
 a:link, a:visited {
@@ -63,12 +26,86 @@ a:hover {
     color: #b9b9b9
 }
 
-.contact__info--address {
+.flex-1 {
+    flex: .47 0 auto;
+}
+
+.flex-2 {
+    flex: 2 0 auto;
+}
+
+
+/* INFO SECTION =========================================== */
+
+.contact__container {
+    padding: 0px 24px 25px;
+}
+
+.contact__info-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    white-space: nowrap;
+}
+
+.contact__info-phone-and-hours {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 25px;
+}
+
+
+/* PHONE =========================================== */
+
+.contact__info-phone-container {
+    gap: 6px;
+}
+
+.contact__phone-number {
+    font-size: 30px;
+}
+
+
+/* HOURS =========================================== */
+
+.contact__info-hours-container {
+    gap: 6px;
+}
+
+.hours__table {
+    width: 100%;
+    border-spacing: 50px 0;
+}
+
+tr {
     width: 100%;
 }
 
-.address__text-container {
+th {
+    font-weight: normal;
+}
+
+td {
+    padding-left: 20px;
+    text-align: end;
     white-space: nowrap;
+}
+
+
+/* ADDRESS =========================================== */
+
+.contact__info-address-container {
+    width: 100%;
+}
+
+.contact__address-title-and-address {
+    white-space: nowrap;
+    gap: 6px;
+}
+
+.contact__address {
+    font-size: 24px;
 }
 
 .contact__address-map {
@@ -97,12 +134,30 @@ a:hover {
     }
 }
 
-.request-form {
+
+/* FORM =========================================== */
+
+.contact__form-container {
     margin: 25px 0px 35px;
+    gap: 25px;
+}
+
+.contact__form-title {
+
+}
+
+.contact__form-text-field-container {
+    flex-basis: 50%;
+}
+
+.contact__form-input-fields {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .text-field {
     height: 30px;
+    width: 100%;
     margin-bottom: 20px;
     background: transparent;
     border: none;
@@ -122,17 +177,15 @@ textarea {
     border: 3px solid white;
     padding: 5px;
     border-radius: 10px;
-    margin-top: 12px;
+    margin-top: 0px;
 }
 
 button {
     width: fit-content;
 }
 
-.flex-1 {
-    flex: .47 0 auto;
-}
-
-.flex-2 {
-    flex: 2 0 auto;
+@media (max-width: 550px) {
+    .contact__form-input-fields {
+        flex-direction:column;
+    }
 }

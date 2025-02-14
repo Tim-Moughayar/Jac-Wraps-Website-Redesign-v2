@@ -6,8 +6,7 @@ const nextButton = document.querySelector('.hero__arrow--right');
 const prevButton = document.querySelector('.hero__arrow--left');
 const dotsNav = document.querySelector('.hero__dot-indicator-container');
 const dots = Array.from(dotsNav.children);
-let userHasInteracted = false;
-let autoAdvanceTimer = null;
+var autoAdvanceTimer = null;
 
 // Initialize carousel
 const slideWidth = slides[0].getBoundingClientRect().width;
@@ -19,21 +18,20 @@ const setSlidePosition = (slide, index) => {
 };
 slides.forEach(setSlidePosition);
 
-// Move to target slide
 const moveToSlide = (track, currentSlide, targetSlide) => {
+    clearTimeout(autoAdvanceTimer);
     if (!targetSlide) return; // Guard against null targetSlide
     
     track.style.transform = `translateX(-${targetSlide.style.left})`;
     
-    // Update text track position
     const isFirstSlide = targetSlide.style.left === "0px";
     textTrack.style.transform = `translateY(-${isFirstSlide ? '0' : '50'}px)`;
     
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
+    autoAdvanceTimer = setTimeout(nextSlide, 6000);
 };
 
-// Update dot indicators
 const updateDots = (currentDot, targetDot) => {
     if (!targetDot) return; // Guard against null targetDot
     
@@ -41,7 +39,6 @@ const updateDots = (currentDot, targetDot) => {
     targetDot.classList.add('current-slide');
 };
 
-// Handle previous slide
 const prevSlide = () => {
     const currentSlide = track.querySelector('.current-slide');
     const currentDot = dotsNav.querySelector('.current-slide');
@@ -59,7 +56,6 @@ const prevSlide = () => {
     updateDots(currentDot, targetDot);
 };
 
-// Handle next slide
 const nextSlide = () => {
     const currentSlide = track.querySelector('.current-slide');
     const currentDot = dotsNav.querySelector('.current-slide');
@@ -77,27 +73,19 @@ const nextSlide = () => {
     updateDots(currentDot, targetDot);
 };
 
-// Event listeners
 prevButton.addEventListener('click', (e) => {
     e.preventDefault();
-    userHasInteracted = true;
-    clearTimeout(autoAdvanceTimer);
     prevSlide();
 });
 
 nextButton.addEventListener('click', (e) => {
     e.preventDefault();
-    userHasInteracted = true;
-    clearTimeout(autoAdvanceTimer);
     nextSlide();
 });
 
 dotsNav.addEventListener('click', (e) => {
     const targetDot = e.target.closest('.hero__dot-indicator');
     if (!targetDot) return;
-    
-    userHasInteracted = true;
-    clearTimeout(autoAdvanceTimer);
     
     const currentSlide = track.querySelector('.current-slide');
     const currentDot = dotsNav.querySelector('.current-slide');
@@ -108,17 +96,6 @@ dotsNav.addEventListener('click', (e) => {
     updateDots(currentDot, targetDot);
 });
 
-// Auto advance functionality
-const autoAdvance = () => {
-    if (userHasInteracted) return;
-    nextSlide();
-    autoAdvanceTimer = setTimeout(autoAdvance, 8000);
-};
-
-// Start auto advance
-autoAdvanceTimer = setTimeout(autoAdvance, 8000);
-
-// Optional: Add touch/swipe support
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -137,12 +114,11 @@ const handleSwipe = () => {
     
     if (Math.abs(difference) < swipeThreshold) return;
     
-    userHasInteracted = true;
-    clearTimeout(autoAdvanceTimer);
-    
     if (difference > 0) {
         nextSlide(); // Swipe left
     } else {
         prevSlide(); // Swipe right
     }
 };
+
+autoAdvanceTimer = setTimeout(nextSlide, 6000);
