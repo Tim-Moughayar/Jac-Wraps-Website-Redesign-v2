@@ -111,6 +111,7 @@ main {
     justify-content: space-between;
     margin-top: 5px;
     margin-bottom: 25px;
+    height: 200px;
 }
 
 .header__title {
@@ -290,7 +291,6 @@ ul.breadcrumb-nav {
     padding: 30px 35px;
     background-color: #1D1D1D;
     color: white;
-    min-height: 250px;
     border-radius: 25px;
 }
 
@@ -314,10 +314,17 @@ a:hover {
 
 /* MAINTENANCE =================================================== */
 
-.maintenance-section {
+.maintenance__section {
     align-items: center;
     justify-content: center;
-    padding: 100px 0px;
+    height: 60%;
+}
+
+.maintenance__container {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
 }
 
 

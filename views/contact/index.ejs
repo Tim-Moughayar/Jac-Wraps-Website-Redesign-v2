@@ -7,9 +7,9 @@
 <body>
     <div class="contact__container">
         <%- include('../partials/header', {page_title: "Contact Us"} )%>
-        <section class="contact__info-container">
+        <section class="contact__info-section">
             <div class="contact__info-phone-and-hours">
-                <div class="contact__info-phone-container binto-container flex--column flex-1">
+                <div class="contact__info-container contact__info-container--phone binto-container flex--column flex-1">
                     <h2>Phone</h2>
                     <a class="contact__phone-number white-link" href="tel:555-555-5555">555-555-5555</a>
                     <!-- <a href="tel:555-555-5555">
@@ -18,7 +18,7 @@
                         </button>
                     </a> -->
                 </div>
-                <div class="contact__info-hours-container binto-container flex--column flex-1">
+                <div class="contact__info-container contact__info-container--hours binto-container flex--column flex-1">
                     <h2>Hours</h2>
                     <table class="hours__table fs-4">
                         <tr><th>Weekdays:</th><td>9am - 5pm</td></tr>
@@ -27,7 +27,7 @@
                     </table>
                 </div>
             </div>
-            <div class="contact__info-address-container binto-container flex--row gap-5 justify-content-between">
+            <div class="contact__info-container contact__info-container--address binto-container flex--row gap-5 justify-content-between">
                 <div class="contact__address-title-and-address flex--column">
                     <h2>Address</h2>
                     <a class="contact__address white-link" target="_blank" href=" https://maps.app.goo.gl/uYnqvvRo9xu3DdzCA">7034 N Milwaukee Ave. <br> Niles, IL 60714</a>
@@ -62,7 +62,7 @@
                         <input id="phone" class="text-field" type="tel" name="phone" autocomplete="phone">
                     </div>
 
-                    <div class="contact__form-text-field-container">
+                    <div class="contact__form-text-field-container flex--column">
                         <label for="comments">Comments:</label>
                         <textarea id="comments" name="Comments"></textarea>
                     </div>
