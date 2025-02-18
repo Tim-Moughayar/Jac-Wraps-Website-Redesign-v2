@@ -60,20 +60,20 @@
                 <div class="services__title-container flex--row">
                     <h3 class="services__title">Vehicle Wraps<h3>
                     <span>|</span>
-                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
+                    <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
                 </div>
                 <div class="services__carousel">
-                    .
+                    <%- include('partials/vehicle-carousel')%>
                 </div>
             </div>
             <div class="services__title-and-button-container flex--column">
                 <div class="services__title-container flex--row">
                     <h3 class="services__title">Architectural Graphics<h3>
                     <span>|</span>
-                    <%- include('./partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
+                    <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
                 </div>
                 <div class="services__carousel">
-                    .
+                    <%- include('partials/vehicle-carousel')%>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
             From business hour signs to a fleet of vehicles, the possibilities are endless!
         </p>
     </section>
-    <%- include('./partials/questions')%>
+    <%- include('partials/questions')%>
 
     <script src="javascripts/hero-carousel.js"></script>
     <script src="https://kit.fontawesome.com/6a1ee5dede.js" crossorigin="anonymous"></script>

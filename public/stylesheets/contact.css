@@ -58,7 +58,7 @@ a:hover {
 .contact__info-container {
     gap: 6px;
     height: fit-content;
-    min-height: 218px;
+    min-height: 290px;
 }
 
 
@@ -114,9 +114,17 @@ td {
     border-radius: 10px;
 }
 
+
+/* RESPONSIVE =========================================== */
+
+
 @media (max-width: 1545px) {
     .contact__address-map {
         display: none;
+    }
+    
+    .contact__info-container {
+        min-height: 218px;
     }
 }
 
