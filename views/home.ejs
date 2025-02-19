@@ -56,25 +56,23 @@
     <section class="services__section text-light flex--column">
         <h2 class="fs-1">Services</h2>
         <div class="services__carousel-container flex--column">
-            <div class="services__title-and-button-container flex--column">
-                <div class="services__title-container flex--row">
-                    <h3 class="services__title">Vehicle Wraps<h3>
-                    <span>|</span>
-                    <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
-                </div>
-                <div class="services__carousel">
-                    <%- include('partials/vehicle-carousel')%>
-                </div>
+            <div class="services__title-and-button-container flex--row">
+                <h3 class="services__title">Vehicle Wraps<h3>
+                <span>|</span>
+                <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
             </div>
-            <div class="services__title-and-button-container flex--column">
-                <div class="services__title-container flex--row">
-                    <h3 class="services__title">Architectural Graphics<h3>
-                    <span>|</span>
-                    <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
-                </div>
-                <div class="services__carousel">
-                    <%- include('partials/vehicle-carousel')%>
-                </div>
+            <div class="services__carousel">
+                <%- include('partials/vehicle-carousel')%>
+            </div>
+        </div>
+        <div class="services__carousel-container flex--column">
+            <div class="services__title-and-button-container flex--row">
+                <h3 class="services__title">Architectural Graphics<h3>
+                <span>|</span>
+                <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
+            </div>
+            <div class="services__carousel">
+                <%- include('partials/vehicle-carousel')%>
             </div>
         </div>
     </section>

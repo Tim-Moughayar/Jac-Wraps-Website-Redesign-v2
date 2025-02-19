@@ -6,6 +6,9 @@ main {
     background: white;
 }
 
+* {
+    margin-bottom: 0;
+}
 
 /* FLEX =================================================== */
 
@@ -78,10 +81,85 @@ main {
 }
 
 
+/* VEHICLE CAROUSEL =================================================== */
+
+
+
+/* ARCHITECTURAL CAROUSEL =================================================== */
+
+
 /* CAROUSEL =================================================== */
 
+.carousel {
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+}
 
 
+
+/* CAROUSEL SLIDE =================================================== */
+
+.carousel__slide {
+    height: 270px;
+    width: 405px;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+}
+
+.carousel__slide-img {
+    height: 205px;
+    width: 100%;    
+}
+
+.carousel__slide-banner {
+    height: 225px;
+    width: 100%;
+    padding: 19px;
+    justify-content: space-between;
+    background-color: rgba(44, 44, 44, 0.6);
+    backdrop-filter: blur(30px);
+    position: absolute;
+    top: 205px;
+    transition: top 0.31s ease-out;
+}
+
+.carousel__slide:hover .carousel__slide-banner {
+    height: 225px;
+    width: 100%;
+    top: 45px;
+    position: absolute;
+}
+
+.carousel__slide-title {
+    font-size: 23px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.carousel__slide-description {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.carousel__slide-price-and-request {
+    justify-content: space-between;
+    align-items: end;
+}
+
+.carousel__slide-price-title {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.carousel__slide-price {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    line-height: 30px;
+}
 
 /* NAVBAR =================================================== */
 
@@ -252,10 +330,6 @@ ul.breadcrumb-nav {
 .footer__social-image--white {
     height: 17px;
     display: none;
-}
-
-.footer__logo {
-    /* margin-left: auto; */
 }
 
 .footer__logo-img {

@@ -1,0 +1,14 @@
+<div class="carousel__slide flex--column">
+    <img class="carousel__slide-img" src="media/<%= slide.img %>" alt="temporary image">
+    <div class="carousel__slide-banner flex--column">
+        <h3 class="carousel__slide-title"><%= slide.title %></h3>
+        <p class="carousel__slide-description"><%= slide.description %></p>
+        <div class="carousel__slide-price-and-request flex--row">
+            <div class="carousel__slide-price-container flex--column">
+                <h4 class="carousel__slide-price-title">Starts at</h4>
+                <p class="carousel__slide-price">$<%= slide.price %></p>
+            </div>
+            <%- include('../partials/button', {text: "Free Estimate", img: "arrow_right.svg", link: "contact#contact-form", color: ""})%>
+        </div>
+    </div>
+</div>
