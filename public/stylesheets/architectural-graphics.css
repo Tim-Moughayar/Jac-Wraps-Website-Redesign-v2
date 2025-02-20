@@ -1,4 +1,6 @@
 .architectural__container {
+    width: 100%;
+    max-width: 1950px;
     padding: 0px 24px;
     height: 93vh;
 }
