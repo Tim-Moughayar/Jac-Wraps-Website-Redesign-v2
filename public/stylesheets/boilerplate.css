@@ -1,6 +1,12 @@
 /* GENERAL =================================================== */
 
+html {
+    width: 100%;
+    min-width: 390px;
+}
+
 main {
+    width: 100%;
     position: relative;
     z-index: 1;
     background: white;
@@ -8,7 +14,6 @@ main {
 }
 
 * {
-    transition: all 0.2s ease-out;
     margin-bottom: 0;
 }
 
@@ -83,27 +88,20 @@ main {
 }
 
 
-/* VEHICLE CAROUSEL =================================================== */
-
-
-
-/* ARCHITECTURAL CAROUSEL =================================================== */
-
-
 /* CAROUSEL =================================================== */
 
 .carousel {
     color: white;
     width: 100%;
     justify-content: space-between;
-    height: 295px;
+    height: 300px;
     gap: 20px;
     overflow-x: auto;
     
 }
 
 .carousel::-webkit-scrollbar {
-    height: 10px;
+    height: 13px;
 }
  
 .carousel::-webkit-scrollbar-track {
@@ -121,10 +119,10 @@ main {
     background-color: rgb(255, 255, 255);
 }
 
-@media(max-width: 1787px) {
+/* @media(max-width: 1787px) {
     .carousel {
     }
-}
+} */
 
 /* CAROUSEL SLIDE =================================================== */
 
@@ -209,17 +207,44 @@ main {
     width: 75px;
 }
 
-.navbar-nav .nav-link {
-    color: black;
-    mix-blend-mode: difference;
-    font-weight: 600;
-    font-size: 18px;
-  }
-
-  .navbar-nav {
+.navbar-nav {
     gap: 10px;
-  }
+}
 
+.nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link.hover {
+    color: #d86e6e;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.navbar__active-page-dot {
+    display: none;
+    width: 7px;
+    height: 7px;
+    background-color: #1D1D1D;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.nav-link.active .navbar__active-page-dot {
+    display: inline-block;
+}
+
+/* @media {
+
+} */
 
 /* HEADER =================================================== */
 
@@ -259,11 +284,12 @@ ul.breadcrumb-nav {
   ul.breadcrumb-nav li a {
     color: white;
     text-decoration: underline;
+    transition: color .2s;
   }
   
   /* Add a color on mouse-over */
   ul.breadcrumb-nav li a:hover {
-    color: #6fb6f5;
+    color: #cecece;
   }
 
 
@@ -406,13 +432,13 @@ ul.breadcrumb-nav {
     border-radius: 25px;
 }
 
-a:link, a:visited {
-    
+.binto-container a:link a:visited {
     color: #ffffff;
+    transition: color 0.2s ;
 }
 
-a:hover {
-    color: #485158;
+.binto-container a:hover {
+    color: #cecece;
 }
 
 .white-link:link, .white-link:visited {
@@ -420,7 +446,7 @@ a:hover {
 }
 
 .white-link:hover {
-    color: #b9b9b9
+    color: #cecece
 }
 
 

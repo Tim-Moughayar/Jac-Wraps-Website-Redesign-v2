@@ -1,11 +1,17 @@
-const track = document.querySelector('.hero__track');
-const textTrack = document.querySelector('.hero__dynamic-text-track');
-const trackContainer = document.querySelector('.hero__track-container');
+const heroSection = document.querySelector('.hero__section');
+const trackContainer = heroSection.querySelector('.hero__track-container');
+const track = trackContainer.querySelector('.hero__track');
 const slides = Array.from(track.children);
-const nextButton = document.querySelector('.hero__arrow--right');
-const prevButton = document.querySelector('.hero__arrow--left');
-const dotsNav = document.querySelector('.hero__dot-indicator-container');
+
+const navContainer = heroSection.querySelector('.hero__nav-container');
+const sliderPause = navContainer.querySelector('.hero__slider-pause-button');
+const nextButton = navContainer.querySelector('.hero__arrow--right');
+const prevButton = navContainer.querySelector('.hero__arrow--left');
+const dotsNav = navContainer.querySelector('.hero__dot-indicator-container');
 const dots = Array.from(dotsNav.children);
+
+const textTrack = heroSection.querySelector('.hero__dynamic-text-track');
+
 var autoAdvanceTimer = null;
 
 // Initialize carousel
@@ -29,7 +35,9 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
     
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
-    autoAdvanceTimer = setTimeout(nextSlide, 6000);
+    if (!sliderPause.classList.contains('slider-paused')) {
+        autoAdvanceTimer = setTimeout(nextSlide, 6000);
+    };
 };
 
 const updateDots = (currentDot, targetDot) => {
@@ -95,6 +103,30 @@ dotsNav.addEventListener('click', (e) => {
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
 });
+
+// Pause button
+
+sliderPause.addEventListener('click', (e) => {
+    const playIcon = sliderPause.querySelector('.hero__slider-control-icon--play');
+    const pauseIcon = sliderPause.querySelector('.hero__slider-control-icon--pause');
+
+    if (sliderPause.classList.contains('slider-paused')) {
+        sliderPause.classList.remove('slider-paused');
+        autoAdvanceTimer = setTimeout(nextSlide, 6000);
+
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        sliderPause.classList.add('slider-paused');
+        clearTimeout(autoAdvanceTimer);
+
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+});
+
+
+// Support for mobile touch devices
 
 let touchStartX = 0;
 let touchEndX = 0;

@@ -1,4 +1,4 @@
-/* HERO SECTION ______________________________________________________ */
+/* HERO SECTION ===================================================== */
 
 .hero__section {
     height: 600px;
@@ -21,6 +21,7 @@
     justify-content: space-between;
     padding-top: 50px;
     padding-bottom: 30px;
+    z-index: 1;
 }
 
 .hero__title-container {
@@ -31,8 +32,14 @@
 .hero__title {
     min-height: 95px;
     font-weight: bold;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     font-size: 2.5em;
+}
+
+.hero__title-line-break {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
 }
 
 .hero__dynamic-text-container {
@@ -56,14 +63,53 @@
     padding: 0px 11px 2px;
 }
 
+@media(max-width: 1145px) {
+    .hero__title {
+        font-size: 2em;
+    }
+    .hero__title-container {
+        width: 100%;
+    }
+    
+    .hero__title-and-nav {
+        margin-right: 40px;
+    }
+}
 
-/* Hero Img Carousel Nav ______________________________________________________*/
+@media (max-width: 610px) {
+    .hero__title {
+        font-size: 2em;
+    }
+    .hero__title-container {
+        width: 100%;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero__title {
+        font-size: em;
+    }
+    .hero__title-container {
+        width: 100%;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero__title {
+        min-width: none;
+        font-size: 2em;
+    }
+}
+
+
+/* HERO CAROUSEL NAV------------------*/
 
 .hero__nav-container {
     display: flex;
     flex-direction: row;
     gap: 25px;
-    
 }
 
 .hero__slide-nav {
@@ -71,13 +117,19 @@
     gap: 10px;
 }
 
-.hero__slider-controls-container {
+
+/* PAUSE -------------------------*/
+
+.hero__slider-pause-button {
     display: flex;
     align-items: center;
     height: 100%;
+    border: none;
+    background-color: white;
 }
 
 .hero__slider-control-icon {
+    display: block;
     height: 20px;
     filter: brightness(1.2);
 }
@@ -86,13 +138,18 @@
     filter: brightness(0.5);
 }
 
+.hero__slider-control-icon--play {
+    display: none;
+}
 
 
+/* SLIDE NAV -------------------------*/
 
 .hero__arrow {
     display: flex;
     align-items: center;
     border: none;
+    padding: 6px;
     background-color: transparent;
 }
 
@@ -129,13 +186,14 @@
 }
 
 
-/* Hero Img Carousel ______________________________________________________*/
+/* HERO CAROUSEL --------------------------------*/
 
 .hero__track-container {
     /* background-color: aqua; */
     display: flex;
     height: 100%;
     width: 100%;
+    min-width: 1000;
     right: 0;
     position: relative;
     overflow: hidden;
@@ -159,6 +217,7 @@
     width: fit-content;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .hero__image {
@@ -192,8 +251,19 @@
     margin-left: auto;
 }
 
+@media(max-width: 970px) {
+    .hero__track-container {
+        position: absolute;
+    }
+    .hero__image--vehicle-wraps {
+        width: 70%;
+        height: auto;
+        object-fit: cover;
+    }
+}
 
-/* SERVICES SECTION ______________________________________________________*/
+
+/* SERVICES SECTION =====================================================*/
 
 .services__section {
     background-color: #232323;
@@ -222,6 +292,13 @@
 
 .services__title {
     font-weight: 400;
+    white-space: nowrap;
+}
+
+@media(max-width: 428px) {
+    .services__title {
+        font-size: 20px;
+    }
 }
 
 .services__carousel {
@@ -230,7 +307,7 @@
 }
 
 
-/* ABOUT SECTION ______________________________________________________*/
+/* ABOUT SECTION =====================================================*/
 
 .about__section {
     background-color: #ffffff;

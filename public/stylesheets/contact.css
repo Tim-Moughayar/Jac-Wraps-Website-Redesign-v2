@@ -1,31 +1,5 @@
 /* GENERAL =========================================== */
 
-:root {
-    --blue: #67bbff;
-    --dark-background: ;
-  }
-
-h2 {
-    font-size: 25px;
-}
-
-a:link, a:visited {
-    
-    color: #b0dcff;
-}
-
-a:hover {
-    color: #485158;
-}
-
-.white-link:link, .white-link:visited {
-    color: white
-}
-
-.white-link:hover {
-    color: #b9b9b9
-}
-
 .flex-1 {
     flex: .47 0 auto;
 }
@@ -39,6 +13,7 @@ a:hover {
 
 .contact__container {
     padding: 0px 24px 25px;
+    width: 100%;
 }
 
 .contact__info-section {
