@@ -131,11 +131,11 @@ sliderPause.addEventListener('click', (e) => {
 let touchStartX = 0;
 let touchEndX = 0;
 
-track.addEventListener('touchstart', (e) => {
+heroSection.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
 });
 
-track.addEventListener('touchend', (e) => {
+heroSection.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
 });
