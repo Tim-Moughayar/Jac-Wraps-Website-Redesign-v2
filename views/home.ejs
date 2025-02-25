@@ -10,11 +10,9 @@
             
             <div class="hero__title-container">
                 
-                <h1 class="hero__title text-dark">Elevate your
-                    <span class="mobile-break"><br></span> brand
+                <h1 class="hero__title text-dark">Elevate your brand
                     <span class="hero__title-line-break">
                         <span class="desktop-break"><br></span> with
-                        <span class="mobile-break"><br></span>
                         <div class="hero__dynamic-text-container">
                             <div class="hero__dynamic-text-track">
                                 <div class="hero__dynamic-text">
@@ -50,10 +48,10 @@
         </div>
         <div class="hero__track-container">
             <ul class="hero__track">
-                <li class="hero__slide current-slide">
+                <li class="hero__slide hero__slide--vehicle-wraps current-slide">
                     <img class="hero__image hero__image--vehicle-wraps" src="media/hero_van.png" alt="Vehicle Wraps">
                 </li>
-                <li class="hero__slide">
+                <li class="hero__slide hero__slide--architectural-graphics">
                     <img class="hero__image hero__image--architectural-graphics-1" src="media/hero_images_commercial_wrap_1.png" alt="Architectural graphics">
                     <div class="hero__image-divider">
                         <img class="hero__image hero__image--architectural-graphics-2" src="media/hero_images_commercial_wrap_2.png" alt="Architectural graphics">
@@ -65,11 +63,11 @@
         
     </section>
     <section class="services__section text-light flex--column">
-        <h2 class="services__section-title fs-1">Services</h2>
+        <h2 class="services__section-title">Services</h2>
         <div class="services__carousel-container flex--column">
             <div class="services__title-and-button-container flex--row">
-                <h3 class="services__title">Vehicle Wraps<h3>
-                <span>|</span>
+                <h3 class="services__title">Vehicle Wraps</h3>
+                <span class="services__title-line-seperator"></span>
                 <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/vehicle-wraps", color: ""})%>
             </div>
             <div class="services__carousel">
@@ -78,8 +76,8 @@
         </div>
         <div class="services__carousel-container flex--column">
             <div class="services__title-and-button-container flex--row">
-                <h3 class="services__title">Architectural Graphics<h3>
-                <span>|</span>
+                <h3 class="services__title">Architectural Graphics</h3>
+                <span class="services__title-line-seperator"></span>
                 <%- include('partials/button', {text: "View All", img: "arrow_right.svg", link: "services/architectural-graphics", color: ""})%>
             </div>
             <div class="services__carousel">

@@ -122,12 +122,8 @@ main {
     background-color: rgb(255, 255, 255);
 }
 
-/* @media(max-width: 1787px) {
-    .carousel {
-    }
-} */
 
-/* CAROUSEL SLIDE =================================================== */
+/* CAROUSEL SLIDE ------------------- */
 
 .carousel__slide {
     height: 270px;
@@ -195,15 +191,28 @@ main {
     line-height: 30px;
 }
 
-/* NAVBAR =================================================== */
-
-.bgBlur {
-    background-color: rgba(255, 255, 255, 0.685);
-    backdrop-filter: blur(10px);
+@media(max-width: 490px) {
+    .carousel__slide {
+        height: 270px;
+        width: 310px;
+        min-width: 310px;
+    }
 }
 
-.brand__container {
-    padding: 0px 40px 0px 35px;
+
+/* NAVBAR =================================================== */
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.685);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+}
+
+@media(max-width: 575px) {
+    .navbar {
+        background-color: white;
+        backdrop-filter: none;
+    }
 }
 
 .navbar__jacwraps_logo {
@@ -245,9 +254,6 @@ main {
     display: inline-block;
 }
 
-/* @media {
-
-} */
 
 /* HEADER =================================================== */
 
