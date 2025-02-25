@@ -32,14 +32,19 @@ main {
 
 /* BUTTON =================================================== */
 
+.default-button-link {
+    width: fit-content;
+}
+
 .default-button {
-    width: 100%;
+    width: fit-content;
     height: 100%;
     font-size: 16px;
     border-radius: 33px;
     padding: 4px 10px;
     background-color: white;
     border: 2px solid white;
+    color: black;
     box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
@@ -83,7 +88,6 @@ main {
 .button-style-dark > img {
     filter: brightness(0);
 }
-
 
 .fa-arrow-right {
     height: 17px;
@@ -314,6 +318,7 @@ ul.breadcrumb-nav {
     z-index: 0;
     justify-content: space-between;
     align-items: start;
+    border: none;
 }
 
 .footer__nav {
@@ -471,9 +476,17 @@ ul.breadcrumb-nav {
     align-items: center;
     justify-content: center;
     height: 100%;
-
 }
 
+.maintenance__text {
+    font-size: 1.8em;
+}
+
+@media(max-width: 460px) {
+    .maintenance__text {
+        font-size: 1.3em;
+    }
+}
 
 /* QUESTIONS =================================================== */
 
@@ -485,6 +498,12 @@ ul.breadcrumb-nav {
     align-items: center;
     color: white;
     gap: 25px;
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight: 300;
+}
+
+@media (max-width: 420px) {
+    .have-questions {
+        font-size: 1.3em;
+    }
 }
