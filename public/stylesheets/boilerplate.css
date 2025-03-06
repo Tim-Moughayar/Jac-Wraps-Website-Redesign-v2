@@ -143,7 +143,8 @@ main {
 
 .carousel__slide-img {
     height: 205px;
-    width: 100%;    
+    width: 100%;
+    object-fit: cover;
 }
 
 .carousel__slide-banner {
@@ -169,7 +170,7 @@ main {
 .carousel__slide-title {
     font-size: 23px;
     font-weight: 500;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .carousel__slide-description {
@@ -201,6 +202,22 @@ main {
         width: 310px;
         min-width: 310px;
     }
+
+    .carousel__slide-description {
+        font-size: .9em;
+        font-weight: 400;
+    }
+
+    .carousel__slide-title {
+        font-size: 1.3em;
+        padding-bottom: 8px;
+    }
+
+    .carousel__slide:hover .carousel__slide-title {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+    }
+
 }
 
 

@@ -1,3 +1,5 @@
+// HERO SLIDER ========================================================
+
 const heroSection = document.querySelector('.hero__section');
 const trackContainer = heroSection.querySelector('.hero__track-container');
 const track = trackContainer.querySelector('.hero__track');
@@ -14,15 +16,28 @@ const textTrack = heroSection.querySelector('.hero__dynamic-text-track');
 
 var autoAdvanceTimer = null;
 
-// Initialize carousel
-const slideWidth = slides[0].getBoundingClientRect().width;
-trackContainer.style.maxWidth = `${slideWidth}px`;
+// Initialize carousel after images have loaded
+const initializeCarousel = () => {
+    // Get the slide width after images have loaded
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    trackContainer.style.maxWidth = `${slideWidth}px`;
 
-// Set up initial positions
-const setSlidePosition = (slide, index) => {
-    slide.style.left = `${slideWidth * index}px`;
+    // Set up positions
+    const setSlidePosition = (slide, index) => {
+        slide.style.left = `${slideWidth * index}px`;
+    };
+    slides.forEach(setSlidePosition);
+    
+    // Make sure first slide is active
+    if (!track.querySelector('.current-slide')) {
+        slides[0].classList.add('current-slide');
+        dots[0].classList.add('current-slide');
+    }
+    
+    // Start auto-advance timer
+    clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = setTimeout(nextSlide, 6000);
 };
-slides.forEach(setSlidePosition);
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
     clearTimeout(autoAdvanceTimer);
@@ -35,9 +50,7 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
     
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
-    if (!sliderPause.classList.contains('slider-paused')) {
-        autoAdvanceTimer = setTimeout(nextSlide, 6000);
-    };
+    autoAdvanceTimer = setTimeout(nextSlide, 6000);
 };
 
 const updateDots = (currentDot, targetDot) => {
@@ -105,7 +118,6 @@ dotsNav.addEventListener('click', (e) => {
 });
 
 // Pause button
-
 sliderPause.addEventListener('click', (e) => {
     const playIcon = sliderPause.querySelector('.hero__slider-control-icon--play');
     const pauseIcon = sliderPause.querySelector('.hero__slider-control-icon--pause');
@@ -116,26 +128,24 @@ sliderPause.addEventListener('click', (e) => {
 
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'block';
-      } else {
+    } else {
         sliderPause.classList.add('slider-paused');
         clearTimeout(autoAdvanceTimer);
 
         playIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
-      }
+    }
 });
 
-
 // Support for mobile touch devices
-
 let touchStartX = 0;
 let touchEndX = 0;
 
-heroSection.addEventListener('touchstart', (e) => {
+track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
 });
 
-heroSection.addEventListener('touchend', (e) => {
+track.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
 });
@@ -153,4 +163,54 @@ const handleSwipe = () => {
     }
 };
 
-autoAdvanceTimer = setTimeout(nextSlide, 6000);
+// Wait for images to load before initializing
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all images in the carousel
+    const slideImages = Array.from(track.querySelectorAll('img'));
+    
+    if (slideImages.length === 0) {
+        // No images, initialize immediately
+        initializeCarousel();
+    } else {
+        // Create a promise for each image loading
+        const imagePromises = slideImages.map(img => {
+            return new Promise((resolve) => {
+                if (img.complete) {
+                    resolve();
+                } else {
+                    img.onload = () => resolve();
+                    img.onerror = () => resolve(); // Continue even if image fails
+                }
+            });
+        });
+        
+        // When all images are loaded, initialize
+        Promise.all(imagePromises)
+            .then(initializeCarousel)
+            .catch(() => {
+                // If there's any error, initialize anyway
+                initializeCarousel();
+            });
+    }
+});
+
+// NAVBAR =========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+    
+    // Get current path and handle both "/" and non-"/" cases
+    let currentPath = window.location.pathname.replace(/^\/|\/$/g, "");
+    // If we're on the home page, currentPath will be empty string
+    currentPath = currentPath || "";
+    
+    navLinks.forEach(link => {
+        // Get the href and remove any leading/trailing slashes
+        const href = link.getAttribute("href").replace(/^\/|\/$/g, "");
+        
+        // Compare the cleaned paths
+        if (href === currentPath) {
+            link.classList.add("active");
+        }
+    });
+});

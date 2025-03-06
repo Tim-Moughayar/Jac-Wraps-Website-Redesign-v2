@@ -299,7 +299,7 @@
 
     .hero__track-container {
         position: absolute;
-        height: 500px;
+        height: 420px;
     }
 
     .hero__slide {
@@ -313,11 +313,11 @@
     .hero__slide--vehicle-wraps {
         overflow: hidden;
         padding-left: 25px;
+        width: 1078px;
     }
 
     .hero__image--vehicle-wraps {
-        width: 200%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -389,6 +389,11 @@
 .services__title-and-button-container {
     gap: 12px;
     align-items: center;
+    margin-bottom: 4px;
+}
+
+.services__title-and-button-container .default-button {
+    height: 30px
 }
 
 .services__title {
@@ -397,21 +402,10 @@
     margin: 0;
 }
 
-@media(max-width: 428px) {
-    .services__section-title {
-        font-size: 1.8em;
-    }
-
-    .services__title {
-        font-size: 1.4em;
-    }
-}
-
 .services__title-line-seperator {
     display: flex;
     width: 2px;
     height: 30px;
-    /* padding: 5px 0px; */
     background-color: white;
 }
 
